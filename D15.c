@@ -1,23 +1,30 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int max_find(int);
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main (void)
-{
-		
-	printf("%d",max_find(0));
-  
-return 0; 
+int num_max(void);
+
+
+int main(int argc, char *argv[]) {
+
+	printf("%d",num_max());
+
+return 0;
 }
-//-----------------------------------
-int max_find(int max)
-{
-	int a;
-	scanf("%d",&a);
-
-	if(a==0)
-		return 0;
+//--------------------------------------
+int num_max(void){
 	
-	if(a>max_find(a))
-		return a;
-}	
+	int num, num1;
+	scanf("%d",&num);
+	
+	if(num==0)
+		return -255;
+		
+	num1=num_max();
+	
+	return num>=num1? num:num1;
+}
+
+
+
